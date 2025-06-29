@@ -62,3 +62,37 @@ df[['Close', 'MA5', 'MA10']].plot(title='AAPL 收盘价 + MA5/MA10', figsize=(10
 plt.plot(df['Close'], label='Close') #画出Close的折线图，并设置标签
 plt.plot(df['MA5'], label='MA5') #画出MA5的折线图，并设置标签
 plt.plot(df['MA10'], label='MA10') #画出MA10的折线图，并设置标签
+
+**#创建git仓库并上传GitHub**
+1.在git bush中切换到你的项目路径，例如这里的**cd /d/project1**
+    注意，cd是切换目录命令，在$之前，也要加上
+    /d/ 是到d盘，必须是小写，且与cd要有空格
+    project1是工作目录
+2.初始化git仓库
+    git init
+    git add .
+    git commit -m "init: add MA signal generator script"
+3.设置自己的git的身份信息
+    git config --global user.name "你的名字"
+    git config --global user.email "你的邮箱"
+**要有引号**
+4.将新添加的文件提交到git仓库（2，4可以整合，可以继续优化步骤）
+    git add .
+    git commit -m "init: add MA signal generator script"
+
+5.到github创建一个空仓库，命名但不勾选readme初始化
+
+6.在git bush中输入：
+git remote add origin **https://github.com/youdi789/ma-signal.git**
+git branch -M main
+git push -u origin main
+此链接是你新建仓库的网站地址
+
+#**完成**#
+
+**更新readme**
+注意，如果重新打开git bush，则需要再次进盘，重复第一步
+    在git bush中输入更新信号
+    git add README.md
+    git commit -m "docs: update README content"
+    git push
